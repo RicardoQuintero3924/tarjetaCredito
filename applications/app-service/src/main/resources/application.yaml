@@ -1,6 +1,8 @@
 server:
   port: 8080
 spring:
+  main:
+    allow-circular-references: true
   application:
     name: "tarjetaCredito"
   devtools:
@@ -19,6 +21,12 @@ spring:
     driverClassName: "org.postgresql.Driver"
   jpa:
     databasePlatform: "org.hibernate.dialect.PostgreSQLDialect"
+    show-sql: true
+  thymeleaf:
+    prefix: "classpath:/templates/"
+    suffix: ".html"
+    cache: false
+    mode: HTML
 management:
   endpoints:
     web:

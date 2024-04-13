@@ -34,10 +34,10 @@ public abstract class AdapterOperations<E, D, I, R extends CrudRepository<D, I> 
         return data != null ? toEntityFn.apply(data) : null;
     }
 
-    public E save(E entity) {
-        D data = toData(entity);
-        return toEntity(saveData(data));
-    }
+//    public E save(E entity) {
+//        D data = toData(entity);
+//        return toEntity(saveData(data));
+//    }
 
     protected List<E> saveAllEntities(List<E> entities) {
         List<D> list = entities.stream().map(this::toData).toList();

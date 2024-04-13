@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Solicitud</title>
+    <link rel="stylesheet" href="../static/css/styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Consulta de Solicitud</h1>
+    <form action="/app/registro" method="post" class="status-form">
+        <div class="form-group">
+            <label for="numero-solicitud">Número de Solicitud:</label>
+            <input type="text" id="numero-solicitud" name="numero-solicitud" required>
+        </div>
+        <button type="submit">Consultar Estado</button>
+    </form>
+    <div class="status-result">
+        <h2>Estado de la Solicitud:</h2>
+        <p><strong>Número de Solicitud:</strong> 123456</p>
+        <p><strong>Estado:</strong> En Proceso</p>
+        <!-- Aquí podrías mostrar más detalles sobre el estado de la solicitud -->
+    </div>
+</div>
+</body>
+</html>
