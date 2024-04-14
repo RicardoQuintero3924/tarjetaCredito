@@ -4,23 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consulta de Solicitud</title>
-    <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 <body>
 <div class="container">
     <h1>Consulta de Solicitud</h1>
-    <form action="/app/registro" method="post" class="status-form">
+    <form action="/app/consultaSolicitud" method="post" class="status-form">
         <div class="form-group">
-            <label for="numero-solicitud">Número de Solicitud:</label>
-            <input type="text" id="numero-solicitud" name="numero-solicitud" required>
+            <label for="usuario">Número de Cedula Solicitante:</label>
+            <input type="text" id="usuario" name="usuario" required>
         </div>
         <button type="submit">Consultar Estado</button>
     </form>
-    <div class="status-result">
+    <div class="status-result" th:if="${solicitud}">
         <h2>Estado de la Solicitud:</h2>
-        <p><strong>Número de Solicitud:</strong> 123456</p>
-        <p><strong>Estado:</strong> En Proceso</p>
-        <!-- Aquí podrías mostrar más detalles sobre el estado de la solicitud -->
+        <p><strong>Número de Solicitud:</strong> <span th:text="${solicitud.usuario}"></span></p>
+        <p><strong>Estado:</strong>
+            <span th:if="${solicitud.estadoSolicitud == 1}">Aprobado</span>
+            <span th:if="${solicitud.estadoSolicitud == 0}">Pendiente</span>
+            <span th:if="${solicitud.estadoSolicitud == 2}">Rechazado</span>
+        </p>
+        <div th:if="${solicitud.estadoSolicitud == 1}">
+            <p><strong>Cupo:</strong> <span th:text="${solicitud.cupo}"></span></p>
+
+        </div>
+        <div th:if="${solicitud.estadoSolicitud == 2}">
+            <p><strong>Motivo de Rechazo:</strong> <span th:text="${solicitud.motivorechazo}"></span></p>
+
+        </div>
+    </div>
+    <div th:if="${error}" class="alert alert-danger" role="alert">
+        <span th:text="${error}"></span>
+    </div>
     </div>
 </div>
 </body>

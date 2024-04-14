@@ -35,11 +35,17 @@
     </style>
 </head>
 <body>
+<div th:if="${mensaje}" class="alert alert-success" role="alert">
+    <span th:text="${mensaje}"></span>
+</div>
+<div th:if="${error}" class="alert alert-success" role="alert">
+    <span th:text="${error}"></span>
+</div>
 <div class="success-message">
     ¡Tu solicitud ha sido procesada con éxito!
 </div>
 <div class="button-container">
-    <button onclick="window.location.href='/detailsapplication.html'">Consultar Estado de Solicitud</button>
+    <button onclick="window.location.href='/consulta-solicitud'">Consultar Estado de Solicitud</button>
 </div>
 </body>
 </html>

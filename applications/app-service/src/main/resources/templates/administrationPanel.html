@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Panel de Administración</h1>
+    <div class="solicitudes">
+        <h2>Solicitudes Pendientes</h2>
+        <ul>
+            <li th:each="solicitud : ${solicitudesPendientes}">
+                <span>Número de Solicitud: <span th:text="${solicitud.usuario}"></span></span>
+                <span>Estado: <span th:text="${solicitud.estadoSolicitud == 0 ? 'En Proceso' : 'En Proceso'}"></span></span>
+                <span>Cupo Solicitado: <span th:text="${solicitud.cupo}"></span></span>
+                <span>Cupo Solicitado: <span th:text="${solicitud.cupoDeseado}"></span></span>
+                <span>Fecha Solicitado: <span th:text="${solicitud.fechaSolicitud}"></span></span>
+                <span>Historial: <span th:text="${solicitud.historialCrediticio}"></span></span>
+                <button>Aprobar</button>
+                <button>Rechazar</button>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

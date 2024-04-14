@@ -16,19 +16,19 @@ public class SolicitudAdapter {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column
-    private String Usuario;
+    private String usuario;
     @Column
     private Integer cupo;
     @Column
-    private Integer ingresosMensuales;
+    private Integer ingresosmensuales;
     @Column
-    private Integer cupoDeseado;
+    private Integer cupodeseado;
     @Column
-    private LocalDateTime fechaSolicitud;
+    private LocalDateTime fechasolicitud;
     @Column
-    private String historialCrediticio;
+    private String historialcrediticio;
     @Column
-    private Integer estadoSolicitud;
+    private Integer estadosolicitud;
     @Column
-    private String motivoRechazo;
+    private String motivorechazo;
 }

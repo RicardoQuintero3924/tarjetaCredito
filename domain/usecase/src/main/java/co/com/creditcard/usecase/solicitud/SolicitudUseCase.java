@@ -12,7 +12,7 @@ public class SolicitudUseCase {
 
     public void registrarSolicitud(String usuario, Integer cupo, Integer ingresos, Integer cupod, String historial){
         LocalDateTime fechaS = LocalDateTime.now();
-        Integer estado = 1;
+        Integer estado = 0;
         String motivo = "en proceso";
         Solicitud solicitud = Solicitud.builder()
                 .usuario(usuario)
@@ -26,4 +26,5 @@ public class SolicitudUseCase {
                 .build();
         repository.save(solicitud);
     }
+
 }
